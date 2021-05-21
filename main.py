@@ -6,8 +6,9 @@ from read_file import FileReader
 if __name__ == '__main__':
     file_reader = FileReader("data.txt")
     data = file_reader.read_file()
-    print(data)
 
+    el_alg = ElephantAlgorithm(data)
+    print(el_alg.get_minimal_effort())
 
 
 
