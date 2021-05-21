@@ -10,7 +10,7 @@ class FileReader:
 
     def read_file(self):
         try:
-            file = open(self.file_name, 'r')
+            file = open(self.file_name, "r")
             self.lines = file.readlines()
             file.close()
             self.extract_data_from_file()
@@ -25,15 +25,14 @@ class FileReader:
 
     def get_data(self):
         data = {
-            'number_of_elephants': self.number_of_elephants,
-            'elephants_weight': self.elephants_weights,
-            'incorrect_order': self.incorrect_order,
-            'permutation': self.permutation,
-            'min_elephant_weight': self.min_elephant_weight
+            "number_of_elephants": self.number_of_elephants,
+            "elephants_weight": self.elephants_weights,
+            "incorrect_order": self.incorrect_order,
+            "permutation": self.permutation,
+            "min_elephant_weight": self.min_elephant_weight,
         }
 
         return data
-
 
     def extract_data_from_file(self):
         self.get_number_of_elephants()
@@ -86,7 +85,7 @@ class FileReader:
         correct_order_line = correct_order_line.split(" ")
         try:
             for i, number in enumerate(correct_order_line):
-                self.permutation[int(number)-1] = self.incorrect_order[i]
+                self.permutation[int(number) - 1] = self.incorrect_order[i]
         except ValueError:
             print("Cannot convert value from incorrect order to int")
         except IndexError:
